@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3000;
 const cors = require('cors');
 
 app.use(cors({
-    origin: 'http://localhost:5173', 
+    origin: 'https://cs9-nadzhif.vercel.app', 
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
