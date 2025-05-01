@@ -13,6 +13,6 @@ exports.hashPassword = async (password) => {
 }
 
 exports.comparePassword = async (plainPassword, hashedPassword) => {
-    return bcrypt.compare(plainPassword, hashedPassword);
+    return await bcrypt.compare(plainPassword, hashedPassword);
 }
 

@@ -7,15 +7,10 @@ const PORT = process.env.PORT || 3000;
 const cors = require('cors');
 
 app.use(cors({
-    origin: 'https://cs9-nadzhif.vercel.app', 
+    origin: 'http://localhost:5173', 
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "https://cs9-nadzhif.vercel.app");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-});
 
 app.use(express.json());
 

@@ -67,7 +67,8 @@ exports.loginUser = async (req, res) => {
     
     try {
         const user = await userRepository.loginUser(req.query);
-        if (user == null || !password.comparePassword(req.query.password, user.password)) {
+        const correctPassword = await password.comparePassword(req.query.password, user.password);
+        if (user == null || !correctPassword) {
             return baseResponse (
                 res,
                 false,
