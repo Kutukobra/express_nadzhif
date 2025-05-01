@@ -9,9 +9,6 @@ const isStrongPassword = (password) => {
 }
 
 exports.hashPassword = async (password) => {
-    if (!isStrongPassword(password)) {
-        throw new Error('WEAK_PASSWORD');
-    }
     return bcrypt.hash(password, saltRounds);
 }
 

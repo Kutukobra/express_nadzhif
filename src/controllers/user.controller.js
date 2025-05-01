@@ -45,14 +45,6 @@ exports.registerUser = async (req, res) => {
             );
         }
 
-        if (error.message === 'WEAK_PASSWORD') {
-            return baseResponse (
-                res,
-                false,
-                400,
-                'Weak Password. Must be at least 8 characters long, contain a letter, a number, and a special character.'
-            )
-        }
         baseResponse (
             res,
             false,
@@ -176,14 +168,6 @@ exports.updateUser = async (req, res) => {
             );
         }
 
-        if (error.message === 'WEAK_PASSWORD') {
-            return baseResponse (
-                res,
-                false,
-                400,
-                'Weak Password. Must be at least 8 characters long, contain a letter, a number, and a special character.'
-            )
-        }
 
         baseResponse (
             res,
